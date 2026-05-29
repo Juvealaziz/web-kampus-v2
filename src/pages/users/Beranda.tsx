@@ -1,3 +1,17 @@
+type Item = {
+  id: number;
+  judul?: string;
+  desk?: string;
+  gambar?: string;
+  created_at?: string;
+  tipe?: string;
+  status?: string;
+  nama?: string;
+  file_path?: string;
+  url?: string;
+  author?: string;
+};
+
 import Navbar from "../../components/Navbar";
 import CardCar from "../../components/CardCar";
 import Navhead from "../../components/Header";
