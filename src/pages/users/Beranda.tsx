@@ -5,15 +5,16 @@ import Footer from "../../components/Footer";
 import axios from "axios";
 import { useState, useEffect } from "react";
 export default function Beranda() {
-  const [pages, setPages] = useState<any[]>([]);
-  const [pages1, setPages1] = useState<any[]>([]);
-  const [pages2, setPages2] = useState<any[]>([]);
-  const [news, setNews] = useState<any[]>([]);
-  const [news1, setNews1] = useState<any[]>([]);
-  const [prestasi, setPrestasi] = useState<any[]>([]);
-  const [umum, setUmum] = useState<any[]>([]);
-  const [univ1, setUniv1] = useState<any[]>([]);
-  const [prof, setProf] = useState<any[]>([]);
+const [pages, setPages] = useState<Item[]>([]);
+const [pages1, setPages1] = useState<Item[]>([]);
+const [pages2, setPages2] = useState<Item[]>([]);
+const [news, setNews] = useState<Item[]>([]);
+const [news1, setNews1] = useState<Item[]>([]);
+const [prestasi, setPrestasi] = useState<Item[]>([]);
+const [umum, setUmum] = useState<Item[]>([]);
+const [prof, setProf] = useState<Item[]>([]);
+
+const [univ1, setUniv1] = useState<Item | null>(null);
 
   //Statistik data univ
   const DataPegawai = [
