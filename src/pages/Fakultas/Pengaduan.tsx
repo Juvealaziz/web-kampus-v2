@@ -172,7 +172,7 @@ export default function Pengaduan() {
 
                     <div>
                       <ReCAPTCHA
-                        sitekey="6LfU-_0sAAAAAI0mIt6z2sWTeTdvVrB7QVBBHh4t"
+                        sitekey="6Ldb0AQtAAAAACcKQNAv-sKQ5i9g_Efu2vRW6DTw"
                         onChange={(token: string | null) =>
                           setCaptchaToken(token)
                         }
