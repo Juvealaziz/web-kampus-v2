@@ -16,7 +16,7 @@ export default function ASosial() {
   //tampil
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/univ")
+      .get(`${import.meta.env.VITE_API_URL}/univ`)
       .then((res) => {
         setForm({
           id: res.data?.id ?? "",
@@ -35,7 +35,7 @@ export default function ASosial() {
     try {
       //update
       if (form.id) {
-        await axios.put(`http://127.0.0.1:8000/api/univ/${form.id}`, {
+        await axios.put(`${import.meta.env.VITE_API_URL}/univ/${form.id}`, {
           yt: form.yt,
           ig: form.ig,
           fb: form.fb,
@@ -45,7 +45,7 @@ export default function ASosial() {
         window.location.reload();
         setIsEdit(false);
       } else {
-        const Store = await axios.post("http://127.0.0.1:8000/api/univ", {
+        const Store = await axios.post(`${import.meta.env.VITE_API_URL}/univ`, {
           yt: form.yt,
           ig: form.ig,
           fb: form.fb,
@@ -69,7 +69,7 @@ export default function ASosial() {
         {/* Sidebar */}
         <Aside />
 
-        <div className="grid md:grid-cols-12 ">
+       <div className="grid grid-cols-1 md:grid-cols-12">
           <div className="md:col-span-9">
             <Aheader />
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden mx-5 md:mx-12">
