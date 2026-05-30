@@ -92,7 +92,7 @@ export default function UKM() {
                     <div
                       className="relative h-[350px] rounded-2xl overflow-hidden shadow-xl group bg-cover bg-center"
                       style={{
-                        backgroundImage: `url(http://127.0.0.1:8000/uploads/${item.gambar})`,
+                        backgroundImage: `url(${import.meta.env.VITE_BASE_URL}/uploads/${item.gambar})`,
                       }}
                     >
                       {/* Overlay */}
