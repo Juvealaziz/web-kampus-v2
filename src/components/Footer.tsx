@@ -22,7 +22,7 @@ export default function Footer() {
   //tampil
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/univ")
+      .get(`${import.meta.env.VITE_API_URL}/univ`)
       .then((res) => {
         setForm({
           id: res.data?.id ?? "",
