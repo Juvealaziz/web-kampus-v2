@@ -23,7 +23,7 @@ export default function Sidebar() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/Data_Unduh")
+      .get(`${import.meta.env.VITE_API_URL}/Data_Unduh`)
       .then((res) => {
         const filtered = res.data.filter(
           (item: any) => item.tipe === "survei" && item.status === "aktif",
@@ -39,7 +39,7 @@ export default function Sidebar() {
   //fungsion apk
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/Data_Unduh")
+      .get(`${import.meta.env.VITE_API_URL}/Data_Unduh`)
       .then((res) => {
         const filtered = res.data.filter(
           (item: any) => item.tipe === "aplikasi",
@@ -55,7 +55,7 @@ export default function Sidebar() {
   //fungsion kode_etik
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/Data_Unduh")
+      .get(`${import.meta.env.VITE_API_URL}/Data_Unduh`)
       .then((res) => {
         const filtered = res.data.filter(
           (item: any) => item.tipe === "kode_etik" && item.status === "aktif",
@@ -70,7 +70,7 @@ export default function Sidebar() {
   //fakultas
   //Tampil data
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/fakultas").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/fakultas`).then((res) => {
       setFac(res.data);
     });
   }, []);
