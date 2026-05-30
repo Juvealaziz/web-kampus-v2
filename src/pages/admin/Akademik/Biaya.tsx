@@ -32,7 +32,7 @@ export default function ABiaya() {
   const handleUpdate = async () => {
     try {
       if (form.id) {
-        await axios.put(`http://127.0.0.1:8000/api/pages/${form.id}`, {
+        await axios.put(`${import.meta.env.VITE_API_URL}/api/pages/${form.id}`, {
           judul: form.judul,
           isi: form.isi,
         });
@@ -41,7 +41,7 @@ export default function ABiaya() {
         window.location.reload();
         setIsEdit(false);
       } else {
-        const res = await axios.post("http://127.0.0.1:8000/api/pages", {
+        const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/pages`, {
           judul: form.judul,
           isi: form.isi,
         });
