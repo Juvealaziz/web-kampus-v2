@@ -160,7 +160,7 @@ export default function FakultasTeknik() {
                 </div>
                 <div className="px-6">
                   <img
-                    src={`http://127.0.0.1:8000/uploads/${pages.gambar}`}
+                    src={`${import.meta.env.VITE_BASE_URL}/uploads/${pages.gambar}`}
                     alt=""
                     className="w-full mix-blend-darken"
                   />
