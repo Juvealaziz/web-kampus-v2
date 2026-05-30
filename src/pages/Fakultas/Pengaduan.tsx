@@ -35,7 +35,7 @@ export default function Pengaduan() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/pengaduan", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/pengaduan`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
