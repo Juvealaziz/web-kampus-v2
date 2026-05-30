@@ -16,7 +16,7 @@ export default function Akreditasi() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/Data_Unduh")
+      .get(`${import.meta.env.VITE_API_URL}/Data_Unduh`)
       .then((res) => {
         const filtered = res.data.filter(
           (item: any) => item.tipe === "akreditasi",
