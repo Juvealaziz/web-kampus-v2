@@ -151,14 +151,14 @@ export default function AUniversitas() {
                             />
                           ) : (
                             <img
-                              src={`http://127.0.0.1:8000/uploads/${form.logo}`}
+                              src={`${import.meta.env.VITE_BASE_URL}/uploads/${form.logo}`}
                               alt=""
                               className="w-full h-full"
                             />
                           )
                         ) : (
                           <img
-                            src={`http://127.0.0.1:8000/uploads/${form.logo}`}
+                            src={`${import.meta.env.VITE_BASE_URL}/uploads/${form.logo}`}
                             alt=""
                             className="w-full h-full"
                           />
