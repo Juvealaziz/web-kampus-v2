@@ -27,7 +27,7 @@ export default function Senat() {
   };
   //-----
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/profil").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/profil`).then((res) => {
       setPages(res.data);
     });
   }, []);
