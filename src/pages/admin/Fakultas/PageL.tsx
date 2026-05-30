@@ -24,7 +24,7 @@ export default function PageL() {
   });
   //Tampil data
   useEffect(() => {
-    axios.get(`http://127.0.0.1:8000/api/fakultas/${id}`).then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/fakultas/${id}`).then((res) => {
       setForm(res.data);
     });
   }, [id]);
@@ -49,7 +49,7 @@ export default function PageL() {
       }
 
       await axios.post(
-        `http://127.0.0.1:8000/api/fakultas/${form.id}`,
+        `${import.meta.env.VITE_API_URL}/fakultas/${form.id}`,
         formData,
       );
 
@@ -91,7 +91,7 @@ export default function PageL() {
       }
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/fakultas",
+        `${import.meta.env.VITE_API_URL}/fakultas`,
         formData,
         {
           headers: {
