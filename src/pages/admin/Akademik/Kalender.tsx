@@ -15,7 +15,7 @@ export default function AKalender() {
   });
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/pages")
+      .get(`${import.meta.env.VITE_API_URL}/pages`)
       .then((res) => {
         const data = res.data.find(
           (item: any) => item.judul === "Kalender_Akademik",
@@ -34,7 +34,7 @@ export default function AKalender() {
   const handleUpdate = async () => {
     try {
       if (form.id) {
-        await axios.put(`http://127.0.0.1:8000/api/pages/${form.id}`, {
+        await axios.put(`${import.meta.env.VITE_API_URL}/pages/${form.id}`, {
           judul: form.judul,
           isi: form.isi,
         });
@@ -43,7 +43,7 @@ export default function AKalender() {
         window.location.reload();
         setIsEdit(false);
       } else {
-        const res = await axios.post("http://127.0.0.1:8000/api/pages", {
+        const res = await axios.post(`${import.meta.env.VITE_API_URL}/pages`, {
           judul: form.judul,
           isi: form.isi,
         });
