@@ -17,7 +17,7 @@ export default function FakultasTeknik() {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/fakultas/${id}`)
+      .get(`${import.meta.env.VITE_API_URL}/fakultas/${id}`)
       .then((res) => {
         setPages(res.data);
         setProdi(res.data.prodi ?? []);
