@@ -106,7 +106,7 @@ export default function PrestasiData() {
                         <td className="p-3">{item.kategori}</td>
                         <td className="p-3">
                           <img
-                            src={`http://127.0.0.1:8000/uploads/${item.gambar}`}
+                            src={`${import.meta.env.VITE_BASE_URL}/uploads/${item.gambar}`}
                             alt="img"
                             className="w-12 h-12"
                           />
