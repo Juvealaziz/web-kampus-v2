@@ -35,7 +35,7 @@ export default function Dashdata() {
   const end = start + perPage;
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/users").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/users`).then((res) => {
       setData_login(res.data);
     });
   }, []);
@@ -51,7 +51,7 @@ export default function Dashdata() {
     if (confirm("Apakah kamu yakin ingin menghapus data ini?")) {
       try {
         const response = await axios.delete(
-          `http://127.0.0.1:8000/api/users/${id}`,
+          `${import.meta.env.VITE_API_URL}/users/${id}`,
         );
 
         alert(response.data.message);
@@ -70,7 +70,7 @@ export default function Dashdata() {
   const [Ukms, setUkms] = useState([]);
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/UKM").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/UKM`).then((res) => {
       setUkms(res.data);
     });
   }, []);
@@ -104,7 +104,7 @@ export default function Dashdata() {
 
   const [Pegawe, setPegawe] = useState([]);
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/profil").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/profil`).then((res) => {
       setPegawe(res.data);
     });
   }, []);
@@ -140,14 +140,14 @@ export default function Dashdata() {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/fakultas/`)
+      .get(`${import.meta.env.VITE_API_URL}/fakultas/`)
       .then((res) => {
         setFklts(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
-    axios.get("http://127.0.0.1:8000/api/prodi").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/prodi`).then((res) => {
       setProdi(res.data);
     });
   }, []);
@@ -171,7 +171,7 @@ export default function Dashdata() {
   //Download
   const [File_d, setFile_d] = useState([]);
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/Data_Unduh").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/Data_Unduh`).then((res) => {
       setFile_d(res.data);
     });
   }, []);
