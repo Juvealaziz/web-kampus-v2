@@ -10,7 +10,7 @@ export default function BiroAkademik() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/pages")
+      .get(`${import.meta.env.VITE_API_URL}/pages`)
       .then((res) => {
         const filtered = res.data.filter(
           (item: any) => item.judul === "Biro-Akademik",
