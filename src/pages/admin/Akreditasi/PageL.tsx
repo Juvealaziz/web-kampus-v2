@@ -15,7 +15,7 @@ export default function PageL() {
 
   //Tampil data
   useEffect(() => {
-    axios.get(`http://127.0.0.1:8000/api/Data_Unduh/${id}`).then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/Data_Unduh/${id}`).then((res) => {
       setForm(res.data);
     });
   }, [id]);
@@ -33,7 +33,7 @@ export default function PageL() {
       }
 
       await axios.post(
-        `http://127.0.0.1:8000/api/Data_Unduh/${form.id}`,
+        `${import.meta.env.VITE_API_URL}/Data_Unduh/${form.id}`,
         formData,
         {
           headers: {
@@ -63,7 +63,7 @@ export default function PageL() {
       }
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/Data_Unduh",
+        `${import.meta.env.VITE_API_URL}/Data_Unduh`,
         formData,
         {
           headers: {
