@@ -20,7 +20,7 @@ export default function AUniversitas() {
   //tampil
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/univ")
+      .get(`${import.meta.env.VITE_API_URL}/univ`)
       .then((res) => {
         setForm({
           id: res.data?.id ?? "",
@@ -56,14 +56,14 @@ export default function AUniversitas() {
         formData.append("_method", "PUT");
         console.log(logo);
         console.log(formData.get("logo"));
-        await axios.post(`http://127.0.0.1:8000/api/univ/${form.id}`, formData);
+        await axios.post(`${import.meta.env.VITE_API_URL}/univ/${form.id}`, formData);
 
         alert("Berhasil Diperbarui");
         window.location.reload();
         setIsEdit(false);
       } else {
         const Store = await axios.post(
-          "http://127.0.0.1:8000/api/univ",
+          `${import.meta.env.VITE_API_URL}/univ`,
           formData,
         );
 
