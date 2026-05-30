@@ -18,7 +18,7 @@ export default function PrestasiData() {
   const end = start + perPage;
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/UKM").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/UKM`).then((res) => {
       setData(res.data);
     });
   }, []);
@@ -33,7 +33,7 @@ export default function PrestasiData() {
     if (confirm("Apakah kamu yakin ingin menghapus data ini?")) {
       try {
         const response = await axios.delete(
-          `http://127.0.0.1:8000/api/UKM/${id}`,
+          `${import.meta.env.VITE_API_URL}/UKM/${id}`,
         );
 
         alert(response.data.message);
