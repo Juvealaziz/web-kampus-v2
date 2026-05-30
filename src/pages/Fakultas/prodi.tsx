@@ -14,7 +14,7 @@ export default function DetailProdi() {
     if (!id) return;
 
     axios
-      .get(`http://127.0.0.1:8000/api/prodi/${id}`)
+      .get(`${import.meta.env.VITE_API_URL}/prodi/${id}`)
       .then((res) => {
         setPages(res.data);
       })
