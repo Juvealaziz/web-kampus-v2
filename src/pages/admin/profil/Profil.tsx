@@ -11,7 +11,7 @@ export default function ProfilData() {
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/profil").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/profil`).then((res) => {
       setData(res.data);
     });
   }, []);
@@ -24,7 +24,7 @@ export default function ProfilData() {
     if (confirm("Apakah kamu yakin ingin menghapus data ini?")) {
       try {
         const response = await axios.delete(
-          `http://127.0.0.1:8000/api/profil/${id}`,
+          `${import.meta.env.VITE_API_URL}/profil/${id}`,
         );
 
         alert(response.data.message);
