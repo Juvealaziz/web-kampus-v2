@@ -12,7 +12,7 @@ export default function UKM() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/UKM").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/UKM`).then((res) => {
       setData(res.data);
     });
   }, []);
