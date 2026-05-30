@@ -17,7 +17,7 @@ export default function ABeasiswa() {
   });
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/pages")
+      .get(`${import.meta.env.VITE_API_URL}/pages`)
       .then((res) => {
         const data = res.data.find((item: any) => item.judul === "Beasiswa");
         setForm({
@@ -43,14 +43,14 @@ export default function ABeasiswa() {
       }
 
       if (form.id) {
-        await axios.put(`http://127.0.0.1:8000/api/pages/${form.id}`, formData);
+        await axios.put(`${import.meta.env.VITE_API_URL}/pages/${form.id}`, formData);
 
         alert("Berhasil update");
         window.location.reload();
         setIsEdit(false);
       } else {
         const res = await axios.post(
-          "http://127.0.0.1:8000/api/pages",
+          `${import.meta.env.VITE_API_URL}/pages`,
           formData,
         );
         alert("Berhasil tambah");
