@@ -85,7 +85,7 @@ export default function Dosen() {
               {/* FOTO */}
               <div className="Profil md:col-span-4 text-center bg-gray-200 w-full p-4 rounded-2xl">
                 <img
-                  src={`http://127.0.0.1:8000/uploads/${item.gambar}`}
+                  src={`${import.meta.env.VITE_BASE_URL}/uploads/${item.gambar}`}
                   alt=""
                   className="w-full max-w-[300px] h-[300px] object-cover rounded-xl mx-auto"
                 />
