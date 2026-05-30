@@ -84,7 +84,7 @@ export default function Sakip() {
                         <ul className="space-y-2">
                           <li>
                             <a
-                              href={`http://127.0.0.1:8000/storage/${item.file_path}`}
+                              href={`${import.meta.env.VITE_BASE_URL}/storage/${item.file_path}`}
                               className="text-blue-400"
                               download
                             >
