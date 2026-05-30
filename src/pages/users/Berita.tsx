@@ -58,7 +58,7 @@ export default function Berita() {
                   <div className="md:col-span-5">
                     <img
                       style={{
-                        backgroundImage: `url(http://127.0.0.1:8000/uploads/${item.gambar})`,
+                        backgroundImage: `url(${import.meta.env.VITE_BASE_URL}/uploads/${item.gambar})`,
                       }}
                       className="w-full md:w-[400px] h-[200px] object-cover rounded-2xl ml-auto"
                     />
