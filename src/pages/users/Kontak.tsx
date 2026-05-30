@@ -56,7 +56,7 @@ export default function Kontak() {
     setLoading(true);
 
     try {
-      const res = await fetch("${import.meta.env.VITE_BASE_URL}/api/pengaduan", {
+      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/api/pengaduan`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -129,7 +129,7 @@ export default function Kontak() {
             <div className="text-center">
               <div className="flex justify-center">
                 <img
-                  src={`http://127.0.0.1:8000/uploads/${univ?.logo}`}
+                  src={`${import.meta.env.VITE_BASE_URL}//uploads/${univ?.logo}`}
                   alt="Logo Universitas"
                   className="w-[120px] h-[120px] rounded-full object-cover shadow-lg"
                 />
@@ -270,7 +270,7 @@ export default function Kontak() {
 
                   <div>
                     <ReCAPTCHA
-                      sitekey="6LfU-_0sAAAAAI0mIt6z2sWTeTdvVrB7QVBBHh4t"
+                      sitekey="6Ldb0AQtAAAAACcKQNAv-sKQ5i9g_Efu2vRW6DTw"
                       onChange={(token: string | null) =>
                         setCaptchaToken(token)
                       }
