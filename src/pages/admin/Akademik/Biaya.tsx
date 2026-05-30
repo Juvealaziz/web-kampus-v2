@@ -15,7 +15,7 @@ export default function ABiaya() {
   });
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/pages")
+     .get(`${import.meta.env.VITE_API_URL}/pages`)
       .then((res) => {
         const data = res.data.find((item: any) => item.judul === "Biaya");
         setForm({
