@@ -34,7 +34,7 @@ export default function Modal({ onClose, selectedUser }) {
         formData.append("_method", "PUT");
 
         await axios.post(
-          `http://127.0.0.1:8000/api/users/${form.id}`,
+          `${import.meta.env.VITE_API_URL}/users/${form.id}`,
           formData,
         );
 
@@ -43,7 +43,7 @@ export default function Modal({ onClose, selectedUser }) {
 
       // CREATE
       else {
-        await axios.post("http://127.0.0.1:8000/api/users", formData);
+        await axios.post(`${import.meta.env.VITE_API_URL}/users`, formData);
 
         alert("Berhasil ditambah");
       }
