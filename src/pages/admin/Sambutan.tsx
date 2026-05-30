@@ -18,7 +18,7 @@ export default function ASejarah() {
   });
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/pages")
+      .get(`${import.meta.env.VITE_API_URL}/pages`)
       .then((res) => {
         const data = res.data.find((item: any) => item.judul === "Sambutan");
         setForm({
@@ -50,7 +50,7 @@ export default function ASejarah() {
       if (form.id) {
         formData.append("_method", "PUT");
         await axios.post(
-          `http://127.0.0.1:8000/api/pages/${form.id}`,
+          `${import.meta.env.VITE_API_URL}/pages/${form.id}`,
           formData,
         );
 
@@ -59,7 +59,7 @@ export default function ASejarah() {
         setIsEdit(false);
       } else {
         const res = await axios.post(
-          "http://127.0.0.1:8000/api/pages",
+          `${import.meta.env.VITE_API_URL}/pages`,
           formData,
         );
         alert("Berhasil tambah");
