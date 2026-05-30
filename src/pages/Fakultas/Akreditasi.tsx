@@ -103,7 +103,7 @@ export default function Akreditasi() {
 
                             <td className="p-3 text-blue-600 font-bold">
                               <a
-                                href={`http://127.0.0.1:8000/storage/${item.file_path}`}
+                                href={`${import.meta.env.VITE_BASE_URL}/storage/${item.file_path}`}
                                 className="text-blue-400"
                                 download
                               >
