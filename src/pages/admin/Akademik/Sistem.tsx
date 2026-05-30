@@ -147,7 +147,7 @@ export default function ASistem() {
                           "redo",
                         ],
                         ckfinder: {
-                          uploadUrl: "http://127.0.0.1:8000/api/upload",
+                          uploadUrl: `${import.meta.env.VITE_BASE_URL}/api/upload`,
                         },
                       }}
                     />
