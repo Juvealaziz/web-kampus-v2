@@ -42,7 +42,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/Data_Unduh")
+      .get(`${import.meta.env.VITE_API_URL}/Data_Unduh`)
       .then((res) => {
         const filtered = res.data.filter(
           (item: any) =>
@@ -58,7 +58,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/Data_Unduh")
+      .get(`${import.meta.env.VITE_API_URL}/Data_Unduh`)
       .then((res) => {
         const filtered = res.data.filter(
           (item: any) => item.tipe === "aplikasi",
@@ -73,7 +73,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/Data_Unduh")
+      .get(`${import.meta.env.VITE_API_URL}/Data_Unduh`)
       .then((res) => {
         const filtered = res.data.filter(
           (item: any) => item.tipe === "video_kampus",
@@ -88,7 +88,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
   //berita pilihan
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/UKM")
+      .get(`${import.meta.env.VITE_API_URL}/UKM`)
       .then((res) => {
         const filtered = res.data.filter(
           (item: any) =>
@@ -104,7 +104,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
   //berita  utama
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/UKM")
+      .get(`${import.meta.env.VITE_API_URL}/UKM`)
       .then((res) => {
         const filtered = res.data.filter(
           (item: any) =>
@@ -120,7 +120,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
   //prestasi
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/UKM")
+      .get(`${import.meta.env.VITE_API_URL}/UKM`)
       .then((res) => {
         const filtered = res.data.filter(
           (item: any) => item.tipe === "prestasi",
@@ -136,7 +136,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
   //pengumuman
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/UKM")
+      .get(`${import.meta.env.VITE_API_URL}/UKM`)
       .then((res) => {
         const filtered = res.data.filter(
           (item: any) => item.tipe === "pengumuman",
@@ -153,7 +153,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/univ")
+      .get(`${import.meta.env.VITE_API_URL}/univ`)
       .then((res) => {
         setUniv1(res.data);
       })
@@ -165,7 +165,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
   //profil
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/pages")
+      .get(`${import.meta.env.VITE_API_URL}/pages`)
       .then((res) => {
         const filtered = res.data.filter(
           (item: any) => item.judul === "Sambutan",
@@ -194,7 +194,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
             className="w-full h-full md:h-[500px] object-cover"
           >
             <source
-              src={`http://127.0.0.1:8000/storage/${item.file_path}`}
+              src={`${import.meta.env.VITE_API_URL}/storage/${item.file_path}`}
               type="video/mp4"
             />
           </video>
@@ -227,7 +227,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
             {prof.slice(0, 1).map((item) => (
               <div key={item.id} className="flex items-center gap-5">
                 <img
-                  src={`http://127.0.0.1:8000/uploads/${item.gambar}`}
+                  src={`${import.meta.env.VITE_API_URL}/uploads/${item.gambar}`}
                   alt=""
                   className="w-16 h-16 rounded-full object-cover"
                 />
@@ -274,7 +274,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
             <div className="group" key={item.id}>
               <div className="relative overflow-hidden rounded-xl">
                 <img
-                  src={`http://127.0.0.1:8000/uploads/${item.gambar}`}
+                  src={`${import.meta.env.VITE_API_URL}/uploads/${item.gambar}`}
                   alt=""
                   className="w-full h-[260px] object-cover group-hover:scale-105 transition duration-300"
                 />
@@ -368,7 +368,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
                     <div
                       className="h-[220px] bg-cover bg-center relative"
                       style={{
-                        backgroundImage: `url(http://127.0.0.1:8000/uploads/${item.gambar})`,
+                        backgroundImage: `url(${import.meta.env.VITE_API_URL}/uploads/${item.gambar})`,
                       }}
                     >
                       {/* OVERLAY */}
@@ -442,7 +442,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
                     <div
                       className="h-[220px] bg-cover bg-center relative"
                       style={{
-                        backgroundImage: `url(http://127.0.0.1:8000/uploads/${item.gambar})`,
+                        backgroundImage: `url(${import.meta.env.VITE_API_URL}/uploads/${item.gambar})`,
                       }}
                     >
                       {/* OVERLAY */}
