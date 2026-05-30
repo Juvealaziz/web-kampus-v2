@@ -85,7 +85,7 @@ export default function Prestasi() {
                   <div
                     className="h-[500px] rounded-3xl bg-cover bg-center shadow-2xl"
                     style={{
-                      backgroundImage: `url(http://127.0.0.1:8000/uploads/${item.gambar})`,
+                      backgroundImage: `url(${import.meta.env.VITE_BASE_URL}/uploads/${item.gambar})`,
                     }}
                   ></div>
                 ))}
@@ -100,7 +100,7 @@ export default function Prestasi() {
                           key={item.id}
                           className="relative h-[220px] rounded-2xl overflow-hidden bg-cover bg-center group"
                           style={{
-                            backgroundImage: `url(http://127.0.0.1:8000/uploads/${item.gambar})`,
+                            backgroundImage: `url(${import.meta.env.VITE_BASE_URL}/uploads/${item.gambar})`,
                           }}
                         >
                           <a
@@ -133,7 +133,7 @@ export default function Prestasi() {
                           key={item.id}
                           className="relative h-[220px] rounded-2xl overflow-hidden bg-cover bg-center group"
                           style={{
-                            backgroundImage: `url(http://127.0.0.1:8000/uploads/${item.gambar})`,
+                            backgroundImage: `url(${import.meta.env.VITE_BASE_URL}/uploads/${item.gambar})`,
                           }}
                         >
                           <a
@@ -175,7 +175,7 @@ export default function Prestasi() {
                         {/* Gambar */}
                         <div className="md:col-span-5">
                           <img
-                            src={`http://127.0.0.1:8000/uploads/${item.gambar}`}
+                            src={`${import.meta.env.VITE_BASE_URL}/uploads/${item.gambar}`}
                             alt={item.judul}
                             className="w-full h-[220px] object-cover rounded-2xl"
                           />
