@@ -194,7 +194,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
             className="w-full h-full md:h-[500px] object-cover"
           >
             <source
-              src={`${import.meta.env.VITE_API_URL}/storage/${item.file_path}`}
+              src={`${import.meta.env.VITE_BASE_URL}/storage/${item.file_path}`}
               type="video/mp4"
             />
           </video>
@@ -227,7 +227,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
             {prof.slice(0, 1).map((item) => (
               <div key={item.id} className="flex items-center gap-5">
                 <img
-                  src={`${import.meta.env.VITE_API_URL}/uploads/${item.gambar}`}
+                  src={`${import.meta.env.VITE_BASE_URL}/uploads/${item.gambar}`}
                   alt=""
                   className="w-16 h-16 rounded-full object-cover"
                 />
@@ -274,7 +274,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
             <div className="group" key={item.id}>
               <div className="relative overflow-hidden rounded-xl">
                 <img
-                  src={`${import.meta.env.VITE_API_URL}/uploads/${item.gambar}`}
+                  src={`${import.meta.env.VITE_BASE_URL}/uploads/${item.gambar}`}
                   alt=""
                   className="w-full h-[260px] object-cover group-hover:scale-105 transition duration-300"
                 />
@@ -368,7 +368,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
                     <div
                       className="h-[220px] bg-cover bg-center relative"
                       style={{
-                        backgroundImage: `url(${import.meta.env.VITE_API_URL}/uploads/${item.gambar})`,
+                        backgroundImage: `url(${import.meta.env.VITE_BASE_URL}/uploads/${item.gambar})`,
                       }}
                     >
                       {/* OVERLAY */}
@@ -442,7 +442,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
                     <div
                       className="h-[220px] bg-cover bg-center relative"
                       style={{
-                        backgroundImage: `url(${import.meta.env.VITE_API_URL}/uploads/${item.gambar})`,
+                        backgroundImage: `url(${import.meta.env.VITE_BASE_URL}/uploads/${item.gambar})`,
                       }}
                     >
                       {/* OVERLAY */}
@@ -567,7 +567,7 @@ const [univ1, setUniv1] = useState<Item | null>(null);
             className="group bg-white rounded-xl shadow-md overflow-hidden "
           >
             <img
-              src={`http://127.0.0.1:8000/storage/${item.file_path}`}
+              src={`${import.meta.env.VITE_BASE_URL}/storage/${item.file_path}`}
               className="w-full h-[400px] object-cover group-hover:scale-110 transition duration-500"
             />
           </div>
