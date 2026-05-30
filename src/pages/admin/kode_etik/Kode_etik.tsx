@@ -10,7 +10,7 @@ export default function AKode() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/Data_Unduh")
+      .get(`${import.meta.env.VITE_API_URL}/Data_Unduh`)
       .then((res) => {
         const filtered = res.data.filter(
           (item: any) => item.tipe === "kode_etik",
@@ -28,7 +28,7 @@ export default function AKode() {
     if (confirm("Apakah kamu yakin ingin menghapus data ini?")) {
       try {
         const response = await axios.delete(
-          `http://127.0.0.1:8000/api/Data_Unduh/${id}`,
+          `${import.meta.env.VITE_API_URL}/Data_Unduh/${id}`,
         );
 
         alert(response.data.message);
