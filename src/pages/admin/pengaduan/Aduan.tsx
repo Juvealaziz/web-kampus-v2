@@ -17,7 +17,7 @@ export default function Aduan() {
   const start = (page - 1) * perPage;
   const end = start + perPage;
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/pengaduan").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/pengaduan`).then((res) => {
       console.log("Respon API:", res.data);
       setData(res.data);
     });
