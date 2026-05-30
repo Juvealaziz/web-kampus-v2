@@ -86,7 +86,7 @@ export default function AUniversitas() {
         {/* Sidebar */}
         <Aside />
 
-        <div className="grid md:grid-cols-12 ">
+         <div className="grid grid-cols-1 md:grid-cols-12">
           <div className="md:col-span-9">
             <Aheader />
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden mx-5 md:mx-12">
