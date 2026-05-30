@@ -29,7 +29,7 @@ export default function Pengumuman() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/UKM")
+      .get(`${import.meta.env.VITE_API_URL}/UKM`)
       .then((res) => {
         const filtered = res.data.filter(
           (item: any) => item.tipe === "pengumuman",
@@ -46,7 +46,7 @@ export default function Pengumuman() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/UKM")
+      .get(`${import.meta.env.VITE_API_URL}/UKM`)
       .then((res) => {
         const filtered = res.data.filter((item: any) => item.tipe === "lomba");
 
