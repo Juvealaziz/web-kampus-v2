@@ -149,7 +149,7 @@ export default function ABiroK() {
                           "redo",
                         ],
                         ckfinder: {
-                          uploadUrl: "http://127.0.0.1:8000/api/upload",
+                          uploadUrl: `${import.meta.env.VITE_BASE_URL}/api/upload`,
                         },
                       }}
                     />
