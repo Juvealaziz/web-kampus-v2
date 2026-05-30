@@ -18,7 +18,7 @@ export default function PageL() {
   });
   //Tampil data
   useEffect(() => {
-    axios.get(`http://127.0.0.1:8000/api/prodi/${id}`).then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/prodi/${id}`).then((res) => {
       setForm(res.data);
     });
   }, [id]);
@@ -33,7 +33,7 @@ export default function PageL() {
       formData.append("program", form.program);
       formData.append("_method", "PUT");
 
-      await axios.post(`http://127.0.0.1:8000/api/prodi/${form.id}`, formData);
+      await axios.post(`${import.meta.env.VITE_API_URL}/prodi/${form.id}`, formData);
 
       alert("Berhasil update");
       setIsTambah(false);
@@ -55,7 +55,7 @@ export default function PageL() {
       formData.append("program", form.program);
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/prodi",
+        `${import.meta.env.VITE_API_URL}/prodi`,
         formData,
       );
 
@@ -72,7 +72,7 @@ export default function PageL() {
   };
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/fakultas").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/fakultas`).then((res) => {
       setFakultas(res.data);
     });
   }, []);
