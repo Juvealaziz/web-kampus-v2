@@ -50,7 +50,7 @@ export default function Beasiswa() {
                   <div className="bg-white rounded-3xl shadow-xl p-6">
                     {pages.map((item) => (
                       <img
-                        src={`http://127.0.0.1:8000/uploads/${item.gambar}`}
+                        src={`${import.meta.env.VITE_BASE_URL}/uploads/${item.gambar}`}
                         alt=""
                         className="w-full rounded-2xl shadow-xl"
                       />
