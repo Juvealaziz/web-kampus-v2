@@ -14,7 +14,7 @@ export default function AFakultas() {
 
   //Tampil data
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/fakultas").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/fakultas`).then((res) => {
       setPages(res.data);
     });
   }, []);
@@ -28,7 +28,7 @@ export default function AFakultas() {
     if (confirm("Apakah kamu yakin ingin menghapus data ini?")) {
       try {
         const response = await axios.delete(
-          `http://127.0.0.1:8000/api/fakultas/${id}`,
+          `${import.meta.env.VITE_API_URL}/fakultas/${id}`,
         );
 
         alert(response.data.message);
