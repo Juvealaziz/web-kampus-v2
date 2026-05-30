@@ -26,7 +26,7 @@ export default function EditProfil() {
     if (!id) return;
 
     axios
-      .get(`http://127.0.0.1:8000/api/profil/${id}`)
+      .get(`${import.meta.env.VITE_API_URL}/profil/${id}`)
       .then((res) => {
         setForm(res.data);
       })
@@ -72,7 +72,7 @@ export default function EditProfil() {
         formData.append("gambar", gambar);
       }
 
-      await axios.post(`http://127.0.0.1:8000/api/profil/${id}`, formData);
+      await axios.post(`${import.meta.env.VITE_API_URL}/profil/${id}`, formData);
 
       alert("Berhasil tambah profil");
       navigate("/admin-profil");
