@@ -13,14 +13,14 @@ export default function Detail() {
     if (!id) return;
 
     axios
-      .get(`http://127.0.0.1:8000/api/UKM/${id}`)
+      .get(`${import.meta.env.VITE_API_URL}/UKM/${id}`)
       .then((res) => {
         setPages(res.data);
       })
       .catch((err) => console.log(err));
 
     axios
-      .get(`http://127.0.0.1:8000/api/UKM/${id}/rekomendasi`)
+      .get(`${import.meta.env.VITE_API_URL}/UKM/${id}/rekomendasi`)
       .then((res) => {
         console.log("Data Rekomendasi:", res.data);
         setRekomendasi(res.data);
