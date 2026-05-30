@@ -140,7 +140,7 @@ export default function PageL() {
 
                 <input
                   type="text"
-                  placeholder="Masukkan judul Google Form"
+                  placeholder="Masukkan judul..."
                   value={form.judul}
                   disabled={!isTambah}
                   onChange={(e) =>
@@ -155,7 +155,7 @@ export default function PageL() {
 
               <div className="p-6">
                 <label className="block text-sm font-medium text-gray-600 mb-2">
-                  Input File/gambar
+                  Input File/gambar/video
                 </label>
                 <input
                   type="file"
