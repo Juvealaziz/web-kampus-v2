@@ -26,7 +26,7 @@ export default function EditBerita() {
     if (!id) return;
 
     axios
-      .get(`http://127.0.0.1:8000/api/UKM/${id}`)
+      .get(`${import.meta.env.VITE_API_URL}/UKM/${id}`)
       .then((res) => {
         console.log("FULL RESPONSE:", res);
         console.log("res.data:", res.data);
@@ -72,7 +72,7 @@ export default function EditBerita() {
         formData.append("gambar", gambar);
       }
 
-      await axios.post(`http://127.0.0.1:8000/api/UKM/${form.id}`, formData);
+      await axios.post(`${import.meta.env.VITE_API_URL}/UKM/${form.id}`, formData);
 
       alert("Berhasil Diperbarui");
       navigate("/admin-Berita");
