@@ -18,7 +18,7 @@ export default function Kontak() {
   const [univ, setUniv] = useState<any | null>(null);
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/univ")
+      .get(`${import.meta.env.VITE_API_URL}/univ`)
       .then((res) => {
         setUniv(res.data);
       })
