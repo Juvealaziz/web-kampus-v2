@@ -48,7 +48,7 @@ export default function Sambutan() {
                 <div className="px-6">
                   {pages.map((item) => (
                     <img
-                      src={`http://127.0.0.1:8000/uploads/${item.gambar}`}
+                      src={`${import.meta.env.VITE_BASE_URL}/uploads/${item.gambar}`}
                       alt=""
                       className="w-full mix-blend-darken"
                     />
