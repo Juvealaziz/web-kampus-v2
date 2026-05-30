@@ -54,7 +54,7 @@ export default function Berita() {
         formData.append("gambar", gambar);
       }
 
-      const res = await axios.post("http://127.0.0.1:8000/api/UKM", formData);
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/UKM`, formData);
 
       alert("Berhasil tambah");
       navigate("/admin-berita");
